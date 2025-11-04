@@ -1,4 +1,6 @@
 import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { supabase } from '../lib/supabaseClient'
 import { useFetchData } from '../hooks/useSupabase'
 import type { Service, Provider } from '../types'
 
@@ -6,6 +8,29 @@ export default function ServiceDetails() {
   const { id } = useParams<{ id: string }>()
   const { data: services, loading: servicesLoading, error: servicesError } = useFetchData<Service>('services', '*')
   const { data: providers, loading: providersLoading, error: providersError } = useFetchData<Provider>('providers', 'id, name, city, phone, whatsapp, address')
+
+  // سجل زيارة صفحة الخدمة
+  useEffect(() => {
+    if (!id) return
+    ;(async () => {
+      try {
+        const page = `/service/${id}`
+        await supabase.rpc('record_visit', { p_page: page })
+        // حدّث عداد الجلسة لعرضه في الهيدر
+        try {
+          const raw = sessionStorage.getItem('session_pages') || '[]'
+          const arr = JSON.parse(raw) as string[]
+          if (!arr.includes(page)) {
+            arr.push(page)
+            sessionStorage.setItem('session_pages', JSON.stringify(arr))
+          }
+          window.dispatchEvent(new Event('data-refresh'))
+        } catch (_) {}
+      } catch (_) {
+        // ignore
+      }
+    })()
+  }, [id])
 
   if (servicesLoading || providersLoading) return <div style={styles.loading}><p>جارٍ التحميل...</p></div>
   if (servicesError || providersError) return <p style={styles.error}>خطأ: {servicesError || providersError}</p>

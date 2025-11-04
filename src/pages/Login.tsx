@@ -39,7 +39,28 @@ export default function Login() {
 
       if (error) {
         console.error('❌ خطأ في المصادقة:', error)
-        throw error
+        
+        // معالجة الأخطاء وإعطاء رسائل واضحة للمستخدم
+        let userFriendlyMessage = ''
+        
+        if (error.message.includes('Invalid login credentials') || error.message.includes('invalid_credentials')) {
+          userFriendlyMessage = 'البريد الإلكتروني أو كلمة المرور غير صحيحة. يرجى التحقق من البيانات والمحاولة مرة أخرى.'
+        } else if (error.message.includes('Email not confirmed') || error.message.includes('email_not_confirmed')) {
+          userFriendlyMessage = 'يرجى التحقق من بريدك الإلكتروني أولاً. تحقق من صندوق الوارد والنقر على رابط التفعيل.'
+        } else if (error.message.includes('User already registered') || error.message.includes('already_registered')) {
+          userFriendlyMessage = 'هذا البريد الإلكتروني مسجل بالفعل. يرجى تسجيل الدخول بدلاً من إنشاء حساب جديد.'
+        } else if (error.message.includes('Password should be at least')) {
+          userFriendlyMessage = 'كلمة المرور قصيرة جداً. يجب أن تكون على الأقل 6 أحرف.'
+        } else if (error.message.includes('Invalid email')) {
+          userFriendlyMessage = 'البريد الإلكتروني المدخل غير صحيح. يرجى التحقق من صحة البريد الإلكتروني.'
+        } else {
+          userFriendlyMessage = 'حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى أو التواصل مع الدعم الفني.'
+        }
+        
+        setErrorMsg(userFriendlyMessage)
+        setDebugMsg('❌ فشل في المصادقة')
+        setLoading(false)
+        return
       }
 
       if (isSignUp) {
@@ -61,8 +82,25 @@ export default function Login() {
 
     } catch (err: unknown) {
       console.error('💥 خطأ عام في المصادقة:', err)
-      const errorMessage = err instanceof Error ? err.message : 'Unknown error'
-      setErrorMsg(`خطأ: ${errorMessage}`)
+      
+      // معالجة الأخطاء غير المتوقعة
+      let userFriendlyMessage = ''
+      
+      if (err instanceof Error) {
+        if (err.message.includes('Invalid login credentials') || err.message.includes('invalid_credentials')) {
+          userFriendlyMessage = 'البريد الإلكتروني أو كلمة المرور غير صحيحة. يرجى التحقق من البيانات والمحاولة مرة أخرى.'
+        } else if (err.message.includes('Email not confirmed')) {
+          userFriendlyMessage = 'يرجى التحقق من بريدك الإلكتروني أولاً. تحقق من صندوق الوارد والنقر على رابط التفعيل.'
+        } else if (err.message.includes('network') || err.message.includes('fetch')) {
+          userFriendlyMessage = 'حدث خطأ في الاتصال بالإنترنت. يرجى التحقق من اتصالك والمحاولة مرة أخرى.'
+        } else {
+          userFriendlyMessage = 'حدث خطأ غير متوقع أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.'
+        }
+      } else {
+        userFriendlyMessage = 'حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.'
+      }
+      
+      setErrorMsg(userFriendlyMessage)
       setDebugMsg('❌ فشل في المصادقة')
     } finally {
       setLoading(false)

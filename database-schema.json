@@ -3,14 +3,9 @@
     "table_name": "activities",
     "columns": [
       {
-        "column_name": "created_at",
-        "data_type": "timestamp with time zone",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "description",
-        "data_type": "text",
-        "is_nullable": "YES"
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
       },
       {
         "column_name": "name",
@@ -18,9 +13,14 @@
         "is_nullable": "NO"
       },
       {
-        "column_name": "id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
+        "column_name": "description",
+        "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES"
       }
     ]
   },
@@ -28,18 +28,13 @@
     "table_name": "ads",
     "columns": [
       {
-        "column_name": "status",
-        "data_type": "text",
-        "is_nullable": "YES"
-      },
-      {
         "column_name": "id",
         "data_type": "bigint",
         "is_nullable": "NO"
       },
       {
-        "column_name": "provider_id",
-        "data_type": "bigint",
+        "column_name": "end_date",
+        "data_type": "timestamp with time zone",
         "is_nullable": "YES"
       },
       {
@@ -48,8 +43,13 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "end_date",
-        "data_type": "timestamp with time zone",
+        "column_name": "title",
+        "data_type": "text",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "service_id",
+        "data_type": "bigint",
         "is_nullable": "YES"
       },
       {
@@ -58,14 +58,14 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "service_id",
+        "column_name": "provider_id",
         "data_type": "bigint",
         "is_nullable": "YES"
       },
       {
-        "column_name": "title",
+        "column_name": "status",
         "data_type": "text",
-        "is_nullable": "NO"
+        "is_nullable": "YES"
       },
       {
         "column_name": "description",
@@ -78,9 +78,9 @@
     "table_name": "ads_images",
     "columns": [
       {
-        "column_name": "image_url",
-        "data_type": "text",
-        "is_nullable": "NO"
+        "column_name": "ad_id",
+        "data_type": "bigint",
+        "is_nullable": "YES"
       },
       {
         "column_name": "id",
@@ -88,9 +88,9 @@
         "is_nullable": "NO"
       },
       {
-        "column_name": "ad_id",
-        "data_type": "bigint",
-        "is_nullable": "YES"
+        "column_name": "image_url",
+        "data_type": "text",
+        "is_nullable": "NO"
       },
       {
         "column_name": "created_at",
@@ -103,9 +103,9 @@
     "table_name": "ads_videos",
     "columns": [
       {
-        "column_name": "created_at",
-        "data_type": "timestamp with time zone",
-        "is_nullable": "YES"
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
       },
       {
         "column_name": "ad_id",
@@ -113,13 +113,13 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "video_url",
-        "data_type": "text",
-        "is_nullable": "NO"
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES"
       },
       {
-        "column_name": "id",
-        "data_type": "bigint",
+        "column_name": "video_url",
+        "data_type": "text",
         "is_nullable": "NO"
       }
     ]
@@ -128,18 +128,13 @@
     "table_name": "affiliates",
     "columns": [
       {
-        "column_name": "wallet_phone",
-        "data_type": "text",
+        "column_name": "user_id",
+        "data_type": "uuid",
         "is_nullable": "YES"
       },
       {
-        "column_name": "id",
-        "data_type": "uuid",
-        "is_nullable": "NO"
-      },
-      {
-        "column_name": "user_id",
-        "data_type": "uuid",
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
         "is_nullable": "YES"
       },
       {
@@ -153,19 +148,24 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "created_at",
-        "data_type": "timestamp with time zone",
+        "column_name": "id",
+        "data_type": "uuid",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "wallet_phone",
+        "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "phone",
+        "data_type": "text",
         "is_nullable": "YES"
       },
       {
         "column_name": "full_name",
         "data_type": "text",
         "is_nullable": "NO"
-      },
-      {
-        "column_name": "phone",
-        "data_type": "text",
-        "is_nullable": "YES"
       }
     ]
   },
@@ -173,14 +173,14 @@
     "table_name": "areas",
     "columns": [
       {
-        "column_name": "name",
-        "data_type": "text",
-        "is_nullable": "YES"
-      },
-      {
         "column_name": "id",
         "data_type": "bigint",
         "is_nullable": "NO"
+      },
+      {
+        "column_name": "name",
+        "data_type": "text",
+        "is_nullable": "YES"
       },
       {
         "column_name": "city_id",
@@ -193,9 +193,9 @@
     "table_name": "branches",
     "columns": [
       {
-        "column_name": "map_url",
-        "data_type": "text",
-        "is_nullable": "YES"
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
       },
       {
         "column_name": "phone",
@@ -203,8 +203,8 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "created_at",
-        "data_type": "timestamp with time zone",
+        "column_name": "map_url",
+        "data_type": "text",
         "is_nullable": "YES"
       },
       {
@@ -216,6 +216,11 @@
         "column_name": "name",
         "data_type": "text",
         "is_nullable": "NO"
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES"
       },
       {
         "column_name": "lng",
@@ -231,11 +236,6 @@
         "column_name": "provider_id",
         "data_type": "bigint",
         "is_nullable": "NO"
-      },
-      {
-        "column_name": "id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
       }
     ]
   },
@@ -243,14 +243,14 @@
     "table_name": "cities",
     "columns": [
       {
-        "column_name": "id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
-      },
-      {
         "column_name": "name",
         "data_type": "text",
         "is_nullable": "YES"
+      },
+      {
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
       }
     ]
   },
@@ -258,18 +258,8 @@
     "table_name": "commissions",
     "columns": [
       {
-        "column_name": "discount_code",
-        "data_type": "text",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "affiliate_id",
-        "data_type": "uuid",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "payment_id",
-        "data_type": "bigint",
+        "column_name": "commission_rate",
+        "data_type": "numeric",
         "is_nullable": "YES"
       },
       {
@@ -278,13 +268,13 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "commission_rate",
-        "data_type": "numeric",
+        "column_name": "payment_id",
+        "data_type": "bigint",
         "is_nullable": "YES"
       },
       {
-        "column_name": "status",
-        "data_type": "text",
+        "column_name": "affiliate_id",
+        "data_type": "uuid",
         "is_nullable": "YES"
       },
       {
@@ -293,9 +283,9 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
+        "column_name": "paid_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES"
       },
       {
         "column_name": "earned_at",
@@ -303,8 +293,18 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "paid_at",
-        "data_type": "timestamp with time zone",
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "status",
+        "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "discount_code",
+        "data_type": "text",
         "is_nullable": "YES"
       }
     ]
@@ -312,11 +312,6 @@
   {
     "table_name": "dashboard_stats",
     "columns": [
-      {
-        "column_name": "today_interactions",
-        "data_type": "bigint",
-        "is_nullable": "YES"
-      },
       {
         "column_name": "total_visits",
         "data_type": "bigint",
@@ -331,32 +326,17 @@
         "column_name": "total_interactions",
         "data_type": "bigint",
         "is_nullable": "YES"
+      },
+      {
+        "column_name": "today_interactions",
+        "data_type": "bigint",
+        "is_nullable": "YES"
       }
     ]
   },
   {
     "table_name": "discount_codes",
     "columns": [
-      {
-        "column_name": "expiry_date",
-        "data_type": "timestamp with time zone",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "active",
-        "data_type": "boolean",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "commission_rate",
-        "data_type": "numeric",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "affiliate_id",
-        "data_type": "uuid",
-        "is_nullable": "YES"
-      },
       {
         "column_name": "code",
         "data_type": "text",
@@ -368,8 +348,28 @@
         "is_nullable": "NO"
       },
       {
-        "column_name": "discount_type",
-        "data_type": "text",
+        "column_name": "discount_value",
+        "data_type": "numeric",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "affiliate_id",
+        "data_type": "uuid",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "commission_rate",
+        "data_type": "numeric",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "active",
+        "data_type": "boolean",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "expiry_date",
+        "data_type": "timestamp with time zone",
         "is_nullable": "YES"
       },
       {
@@ -378,9 +378,9 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "discount_value",
-        "data_type": "numeric",
-        "is_nullable": "NO"
+        "column_name": "discount_type",
+        "data_type": "text",
+        "is_nullable": "YES"
       }
     ]
   },
@@ -388,7 +388,7 @@
     "table_name": "favorites",
     "columns": [
       {
-        "column_name": "ad_id",
+        "column_name": "provider_id",
         "data_type": "bigint",
         "is_nullable": "YES"
       },
@@ -408,7 +408,7 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "provider_id",
+        "column_name": "ad_id",
         "data_type": "bigint",
         "is_nullable": "YES"
       }
@@ -418,13 +418,23 @@
     "table_name": "interactions",
     "columns": [
       {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES"
+      },
+      {
         "column_name": "action",
         "data_type": "text",
         "is_nullable": "NO"
       },
       {
-        "column_name": "provider_id",
+        "column_name": "id",
         "data_type": "bigint",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "user_id",
+        "data_type": "uuid",
         "is_nullable": "YES"
       },
       {
@@ -433,19 +443,9 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "created_at",
-        "data_type": "timestamp with time zone",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "user_id",
-        "data_type": "uuid",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "id",
+        "column_name": "provider_id",
         "data_type": "bigint",
-        "is_nullable": "NO"
+        "is_nullable": "YES"
       }
     ]
   },
@@ -458,11 +458,6 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "name",
-        "data_type": "text",
-        "is_nullable": "YES"
-      },
-      {
         "column_name": "area_id",
         "data_type": "bigint",
         "is_nullable": "YES"
@@ -471,6 +466,11 @@
         "column_name": "id",
         "data_type": "bigint",
         "is_nullable": "NO"
+      },
+      {
+        "column_name": "name",
+        "data_type": "text",
+        "is_nullable": "YES"
       }
     ]
   },
@@ -478,8 +478,8 @@
     "table_name": "offers",
     "columns": [
       {
-        "column_name": "currency",
-        "data_type": "text",
+        "column_name": "end_date",
+        "data_type": "timestamp with time zone",
         "is_nullable": "YES"
       },
       {
@@ -488,7 +488,22 @@
         "is_nullable": "YES"
       },
       {
+        "column_name": "price",
+        "data_type": "numeric",
+        "is_nullable": "NO"
+      },
+      {
         "column_name": "service_id",
+        "data_type": "bigint",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "provider_id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "product_id",
         "data_type": "bigint",
         "is_nullable": "YES"
       },
@@ -498,14 +513,9 @@
         "is_nullable": "NO"
       },
       {
-        "column_name": "provider_id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
-      },
-      {
-        "column_name": "price",
-        "data_type": "numeric",
-        "is_nullable": "NO"
+        "column_name": "currency",
+        "data_type": "text",
+        "is_nullable": "YES"
       },
       {
         "column_name": "created_at",
@@ -513,18 +523,8 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "end_date",
-        "data_type": "timestamp with time zone",
-        "is_nullable": "YES"
-      },
-      {
         "column_name": "active",
         "data_type": "boolean",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "product_id",
-        "data_type": "bigint",
         "is_nullable": "YES"
       }
     ]
@@ -593,8 +593,8 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "completed_at",
-        "data_type": "timestamp with time zone",
+        "column_name": "place_id",
+        "data_type": "bigint",
         "is_nullable": "YES"
       },
       {
@@ -608,6 +608,11 @@
         "is_nullable": "NO"
       },
       {
+        "column_name": "discount_code",
+        "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
         "column_name": "paymob_transaction_id",
         "data_type": "text",
         "is_nullable": "YES"
@@ -618,13 +623,8 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "discount_code",
-        "data_type": "text",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "place_id",
-        "data_type": "bigint",
+        "column_name": "completed_at",
+        "data_type": "timestamp with time zone",
         "is_nullable": "YES"
       },
       {
@@ -643,17 +643,7 @@
     "table_name": "price_history",
     "columns": [
       {
-        "column_name": "provider_id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
-      },
-      {
-        "column_name": "id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
-      },
-      {
-        "column_name": "product_id",
+        "column_name": "service_id",
         "data_type": "bigint",
         "is_nullable": "YES"
       },
@@ -668,9 +658,19 @@
         "is_nullable": "NO"
       },
       {
-        "column_name": "service_id",
+        "column_name": "provider_id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "product_id",
         "data_type": "bigint",
         "is_nullable": "YES"
+      },
+      {
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
       }
     ]
   },
@@ -678,14 +678,19 @@
     "table_name": "products",
     "columns": [
       {
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
+      },
+      {
         "column_name": "created_at",
         "data_type": "timestamp with time zone",
         "is_nullable": "YES"
       },
       {
-        "column_name": "id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
+        "column_name": "image_url",
+        "data_type": "text",
+        "is_nullable": "YES"
       },
       {
         "column_name": "name",
@@ -701,11 +706,6 @@
         "column_name": "description",
         "data_type": "text",
         "is_nullable": "YES"
-      },
-      {
-        "column_name": "image_url",
-        "data_type": "text",
-        "is_nullable": "YES"
       }
     ]
   },
@@ -713,9 +713,14 @@
     "table_name": "providers",
     "columns": [
       {
-        "column_name": "id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
+        "column_name": "whatsapp",
+        "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES"
       },
       {
         "column_name": "status",
@@ -723,18 +728,18 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "image_url",
+        "column_name": "show_on_map",
+        "data_type": "boolean",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "map_url",
         "data_type": "text",
         "is_nullable": "YES"
       },
       {
         "column_name": "lng",
         "data_type": "numeric",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "address",
-        "data_type": "text",
         "is_nullable": "YES"
       },
       {
@@ -748,23 +753,13 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "show_on_map",
-        "data_type": "boolean",
-        "is_nullable": "YES"
-      },
-      {
         "column_name": "activity_id",
         "data_type": "bigint",
         "is_nullable": "YES"
       },
       {
-        "column_name": "updated_at",
-        "data_type": "timestamp with time zone",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "created_at",
-        "data_type": "timestamp with time zone",
+        "column_name": "type",
+        "data_type": "text",
         "is_nullable": "YES"
       },
       {
@@ -773,13 +768,13 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "name",
-        "data_type": "text",
-        "is_nullable": "NO"
-      },
-      {
         "column_name": "subscription_start",
         "data_type": "timestamp with time zone",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "image_url",
+        "data_type": "text",
         "is_nullable": "YES"
       },
       {
@@ -788,24 +783,19 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "description",
-        "data_type": "text",
+        "column_name": "delivery",
+        "data_type": "boolean",
         "is_nullable": "YES"
       },
       {
-        "column_name": "website",
-        "data_type": "text",
+        "column_name": "user_id",
+        "data_type": "uuid",
         "is_nullable": "YES"
       },
       {
-        "column_name": "whatsapp",
+        "column_name": "name",
         "data_type": "text",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "phone",
-        "data_type": "text",
-        "is_nullable": "YES"
+        "is_nullable": "NO"
       },
       {
         "column_name": "category",
@@ -813,7 +803,12 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "type",
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "description",
         "data_type": "text",
         "is_nullable": "YES"
       },
@@ -823,23 +818,28 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "delivery",
-        "data_type": "boolean",
-        "is_nullable": "YES"
-      },
-      {
         "column_name": "area",
         "data_type": "text",
         "is_nullable": "YES"
       },
       {
-        "column_name": "user_id",
-        "data_type": "uuid",
+        "column_name": "phone",
+        "data_type": "text",
         "is_nullable": "YES"
       },
       {
-        "column_name": "map_url",
+        "column_name": "address",
         "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "website",
+        "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
         "is_nullable": "YES"
       }
     ]
@@ -847,11 +847,6 @@
   {
     "table_name": "reports",
     "columns": [
-      {
-        "column_name": "provider_id",
-        "data_type": "bigint",
-        "is_nullable": "YES"
-      },
       {
         "column_name": "id",
         "data_type": "bigint",
@@ -863,9 +858,9 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "ad_id",
-        "data_type": "bigint",
-        "is_nullable": "YES"
+        "column_name": "user_id",
+        "data_type": "uuid",
+        "is_nullable": "NO"
       },
       {
         "column_name": "reason",
@@ -883,15 +878,25 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "user_id",
-        "data_type": "uuid",
-        "is_nullable": "NO"
+        "column_name": "ad_id",
+        "data_type": "bigint",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "provider_id",
+        "data_type": "bigint",
+        "is_nullable": "YES"
       }
     ]
   },
   {
     "table_name": "reviews",
     "columns": [
+      {
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
+      },
       {
         "column_name": "comment",
         "data_type": "text",
@@ -903,8 +908,13 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "service_id",
-        "data_type": "bigint",
+        "column_name": "status",
+        "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
         "is_nullable": "YES"
       },
       {
@@ -913,24 +923,14 @@
         "is_nullable": "NO"
       },
       {
-        "column_name": "created_at",
-        "data_type": "timestamp with time zone",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "status",
-        "data_type": "text",
-        "is_nullable": "YES"
-      },
-      {
-        "column_name": "id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
-      },
-      {
         "column_name": "user_id",
         "data_type": "uuid",
         "is_nullable": "NO"
+      },
+      {
+        "column_name": "service_id",
+        "data_type": "bigint",
+        "is_nullable": "YES"
       }
     ]
   },
@@ -940,6 +940,11 @@
       {
         "column_name": "delivery",
         "data_type": "boolean",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "image_url",
+        "data_type": "text",
         "is_nullable": "YES"
       },
       {
@@ -968,7 +973,7 @@
         "is_nullable": "NO"
       },
       {
-        "column_name": "image_url",
+        "column_name": "description",
         "data_type": "text",
         "is_nullable": "YES"
       },
@@ -976,11 +981,6 @@
         "column_name": "name",
         "data_type": "text",
         "is_nullable": "NO"
-      },
-      {
-        "column_name": "description",
-        "data_type": "text",
-        "is_nullable": "YES"
       }
     ]
   },
@@ -988,8 +988,18 @@
     "table_name": "user_profiles",
     "columns": [
       {
+        "column_name": "role",
+        "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
         "column_name": "phone_number",
         "data_type": "text",
+        "is_nullable": "YES"
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
         "is_nullable": "YES"
       },
       {
@@ -998,19 +1008,9 @@
         "is_nullable": "NO"
       },
       {
-        "column_name": "role",
-        "data_type": "text",
-        "is_nullable": "YES"
-      },
-      {
         "column_name": "id",
         "data_type": "uuid",
         "is_nullable": "NO"
-      },
-      {
-        "column_name": "created_at",
-        "data_type": "timestamp with time zone",
-        "is_nullable": "YES"
       }
     ]
   },
@@ -1018,14 +1018,9 @@
     "table_name": "visits",
     "columns": [
       {
-        "column_name": "ip_address",
-        "data_type": "text",
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
         "is_nullable": "YES"
-      },
-      {
-        "column_name": "id",
-        "data_type": "bigint",
-        "is_nullable": "NO"
       },
       {
         "column_name": "page",
@@ -1033,12 +1028,12 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "created_at",
-        "data_type": "timestamp with time zone",
+        "column_name": "ip_address",
+        "data_type": "text",
         "is_nullable": "YES"
       },
       {
-        "column_name": "source",
+        "column_name": "country",
         "data_type": "text",
         "is_nullable": "YES"
       },
@@ -1048,7 +1043,12 @@
         "is_nullable": "YES"
       },
       {
-        "column_name": "country",
+        "column_name": "id",
+        "data_type": "bigint",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "source",
         "data_type": "text",
         "is_nullable": "YES"
       }

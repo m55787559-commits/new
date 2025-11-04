@@ -1,0 +1,56 @@
+[
+  {
+    "name": "get_providers",
+    "args": [],
+    "returns": "TABLE(id bigint, name text, category text, city text, address text, phone text, website text, image_url text, description text)",
+    "description": "جلب جميع المزودين من قاعدة البيانات"
+  },
+  {
+    "name": "get_services",
+    "args": [],
+    "returns": "TABLE(id bigint, provider_id bigint, name text, description text, price numeric, online boolean, delivery boolean, image_url text, created_at timestamptz)",
+    "description": "جلب قائمة الخدمات الخاصة بكل مزود"
+  },
+  {
+    "name": "get_places",
+    "args": [],
+    "returns": "TABLE(id bigint, name text, category text, city text, address text, phone text, website text, whatsapp text, map_url text, description text, image_url text)",
+    "description": "جلب جميع الأماكن الموجودة في قاعدة البيانات"
+  },
+  {
+    "name": "get_ads",
+    "args": [],
+    "returns": "TABLE(id bigint, provider_id bigint, service_id bigint, title text, description text, start_date timestamptz, end_date timestamptz, created_at timestamptz, status text)",
+    "description": "جلب الإعلانات الحالية"
+  },
+  {
+    "name": "add_provider",
+    "args": ["p_name text", "p_category text", "p_city text", "p_address text", "p_phone text", "p_website text", "p_whatsapp text", "p_map_url text", "p_description text", "p_image_url text", "p_lat numeric", "p_lng numeric", "p_type text", "p_delivery boolean", "p_area text", "p_user_id uuid", "p_activity_id bigint", "p_package_id bigint"],
+    "returns": "bigint",
+    "description": "إنشاء مزود خدمة جديد في الجدول providers"
+  },
+  {
+    "name": "add_place",
+    "args": ["p_name text", "p_category_id bigint", "p_city text", "p_address text", "p_phone text", "p_website text", "p_whatsapp text", "p_map_link text", "p_description text", "p_image_url text"],
+    "returns": "bigint",
+    "description": "إضافة مكان جديد في قاعدة البيانات"
+  },
+  {
+    "name": "add_service",
+    "args": ["p_provider_id bigint", "p_name text", "p_price numeric", "p_description text", "p_image_url text", "p_delivery boolean", "p_online boolean"],
+    "returns": "bigint",
+    "description": "إضافة خدمة جديدة لمزوّد"
+  },
+  {
+    "name": "get_packages",
+    "args": [],
+    "returns": "TABLE(id bigint, name text, price numeric, duration_days integer, ads_limit integer, image_limit integer, video_limit integer, is_active boolean, created_at timestamptz, description text)",
+    "description": "جلب جميع الباقات والخطط"
+  },
+  {
+    "name": "get_reviews",
+    "args": [],
+    "returns": "TABLE(id bigint, provider_id bigint, service_id bigint, user_id uuid, rating integer, comment text, created_at timestamptz)",
+    "description": "جلب التقييمات الخاصة بالمزوّدين والخدمات"
+  }
+]

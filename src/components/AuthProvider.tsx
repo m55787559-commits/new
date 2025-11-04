@@ -70,6 +70,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                   .insert([{
                     id: sessionUser.id,
                     full_name: sessionUser.user_metadata.full_name || sessionUser.email || 'مستخدم جديد',
+                    role: 'user', // تأكد من أن المستخدمين الجدد يكونوا 'user' وليس 'owner'
                     created_at: new Date().toISOString()
                   }])
 

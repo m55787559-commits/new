@@ -1,0 +1,1148 @@
+[
+    {
+      "schema_name": "auth",
+      "function_name": "email",
+      "arguments": "",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "auth",
+      "function_name": "jwt",
+      "arguments": "",
+      "return_type": "jsonb"
+    },
+    {
+      "schema_name": "auth",
+      "function_name": "role",
+      "arguments": "",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "auth",
+      "function_name": "uid",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "armor",
+      "arguments": "bytea",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "armor",
+      "arguments": "bytea, text[], text[]",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "crypt",
+      "arguments": "text, text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "dearmor",
+      "arguments": "text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "decrypt",
+      "arguments": "bytea, bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "decrypt_iv",
+      "arguments": "bytea, bytea, bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "digest",
+      "arguments": "text, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "digest",
+      "arguments": "bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "encrypt",
+      "arguments": "bytea, bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "encrypt_iv",
+      "arguments": "bytea, bytea, bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "gen_random_bytes",
+      "arguments": "integer",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "gen_random_uuid",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "gen_salt",
+      "arguments": "text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "gen_salt",
+      "arguments": "text, integer",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "grant_pg_cron_access",
+      "arguments": "",
+      "return_type": "event_trigger"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "grant_pg_graphql_access",
+      "arguments": "",
+      "return_type": "event_trigger"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "grant_pg_net_access",
+      "arguments": "",
+      "return_type": "event_trigger"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "hmac",
+      "arguments": "bytea, bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "hmac",
+      "arguments": "text, text, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pg_stat_statements",
+      "arguments": "showtext boolean, OUT userid oid, OUT dbid oid, OUT toplevel boolean, OUT queryid bigint, OUT query text, OUT plans bigint, OUT total_plan_time double precision, OUT min_plan_time double precision, OUT max_plan_time double precision, OUT mean_plan_time double precision, OUT stddev_plan_time double precision, OUT calls bigint, OUT total_exec_time double precision, OUT min_exec_time double precision, OUT max_exec_time double precision, OUT mean_exec_time double precision, OUT stddev_exec_time double precision, OUT rows bigint, OUT shared_blks_hit bigint, OUT shared_blks_read bigint, OUT shared_blks_dirtied bigint, OUT shared_blks_written bigint, OUT local_blks_hit bigint, OUT local_blks_read bigint, OUT local_blks_dirtied bigint, OUT local_blks_written bigint, OUT temp_blks_read bigint, OUT temp_blks_written bigint, OUT shared_blk_read_time double precision, OUT shared_blk_write_time double precision, OUT local_blk_read_time double precision, OUT local_blk_write_time double precision, OUT temp_blk_read_time double precision, OUT temp_blk_write_time double precision, OUT wal_records bigint, OUT wal_fpi bigint, OUT wal_bytes numeric, OUT jit_functions bigint, OUT jit_generation_time double precision, OUT jit_inlining_count bigint, OUT jit_inlining_time double precision, OUT jit_optimization_count bigint, OUT jit_optimization_time double precision, OUT jit_emission_count bigint, OUT jit_emission_time double precision, OUT jit_deform_count bigint, OUT jit_deform_time double precision, OUT stats_since timestamp with time zone, OUT minmax_stats_since timestamp with time zone",
+      "return_type": "SETOF record"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pg_stat_statements_info",
+      "arguments": "OUT dealloc bigint, OUT stats_reset timestamp with time zone",
+      "return_type": "record"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pg_stat_statements_reset",
+      "arguments": "userid oid, dbid oid, queryid bigint, minmax_only boolean",
+      "return_type": "timestamp with time zone"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_armor_headers",
+      "arguments": "text, OUT key text, OUT value text",
+      "return_type": "SETOF record"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_key_id",
+      "arguments": "bytea",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_decrypt",
+      "arguments": "bytea, bytea",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_decrypt",
+      "arguments": "bytea, bytea, text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_decrypt",
+      "arguments": "bytea, bytea, text, text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_decrypt_bytea",
+      "arguments": "bytea, bytea",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_decrypt_bytea",
+      "arguments": "bytea, bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_decrypt_bytea",
+      "arguments": "bytea, bytea, text, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_encrypt",
+      "arguments": "text, bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_encrypt",
+      "arguments": "text, bytea",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_encrypt_bytea",
+      "arguments": "bytea, bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_pub_encrypt_bytea",
+      "arguments": "bytea, bytea",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_sym_decrypt",
+      "arguments": "bytea, text, text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_sym_decrypt",
+      "arguments": "bytea, text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_sym_decrypt_bytea",
+      "arguments": "bytea, text, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_sym_decrypt_bytea",
+      "arguments": "bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_sym_encrypt",
+      "arguments": "text, text, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_sym_encrypt",
+      "arguments": "text, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_sym_encrypt_bytea",
+      "arguments": "bytea, text, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgp_sym_encrypt_bytea",
+      "arguments": "bytea, text",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgrst_ddl_watch",
+      "arguments": "",
+      "return_type": "event_trigger"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "pgrst_drop_watch",
+      "arguments": "",
+      "return_type": "event_trigger"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "set_graphql_placeholder",
+      "arguments": "",
+      "return_type": "event_trigger"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_generate_v1",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_generate_v1mc",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_generate_v3",
+      "arguments": "namespace uuid, name text",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_generate_v4",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_generate_v5",
+      "arguments": "namespace uuid, name text",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_nil",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_ns_dns",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_ns_oid",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_ns_url",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "extensions",
+      "function_name": "uuid_ns_x500",
+      "arguments": "",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "graphql",
+      "function_name": "_internal_resolve",
+      "arguments": "query text, variables jsonb, \"operationName\" text, extensions jsonb",
+      "return_type": "jsonb"
+    },
+    {
+      "schema_name": "graphql",
+      "function_name": "comment_directive",
+      "arguments": "comment_ text",
+      "return_type": "jsonb"
+    },
+    {
+      "schema_name": "graphql",
+      "function_name": "exception",
+      "arguments": "message text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "graphql",
+      "function_name": "get_schema_version",
+      "arguments": "",
+      "return_type": "integer"
+    },
+    {
+      "schema_name": "graphql",
+      "function_name": "increment_schema_version",
+      "arguments": "",
+      "return_type": "event_trigger"
+    },
+    {
+      "schema_name": "graphql",
+      "function_name": "resolve",
+      "arguments": "query text, variables jsonb, \"operationName\" text, extensions jsonb",
+      "return_type": "jsonb"
+    },
+    {
+      "schema_name": "graphql_public",
+      "function_name": "graphql",
+      "arguments": "\"operationName\" text, query text, variables jsonb, extensions jsonb",
+      "return_type": "jsonb"
+    },
+    {
+      "schema_name": "pgbouncer",
+      "function_name": "get_auth",
+      "arguments": "p_usename text",
+      "return_type": "TABLE(username text, password text)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_activity",
+      "arguments": "p_name text, p_description text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_ad",
+      "arguments": "p_provider_id bigint, p_service_id bigint, p_title text, p_description text, p_start_date timestamp with time zone, p_end_date timestamp with time zone, p_status text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_ads_image",
+      "arguments": "p_ad_id bigint, p_image_url text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_ads_video",
+      "arguments": "p_ad_id bigint, p_video_url text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_affiliate",
+      "arguments": "p_id uuid, p_user_id uuid, p_full_name text, p_phone text, p_wallet_phone text, p_commission_rate numeric",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_branch",
+      "arguments": "p_provider_id bigint, p_name text, p_address text, p_phone text, p_lat numeric, p_lng numeric, p_map_url text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_commission",
+      "arguments": "p_affiliate_id uuid, p_payment_id bigint, p_sale_amount numeric, p_commission_rate numeric, p_commission_amount numeric, p_status text, p_discount_code text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_discount_code",
+      "arguments": "p_code text, p_discount_value numeric, p_discount_type text, p_affiliate_id uuid, p_expiry_date timestamp with time zone, p_active boolean",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_favorite",
+      "arguments": "p_user_id uuid, p_provider_id bigint, p_ad_id bigint",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_interaction",
+      "arguments": "p_user_id uuid, p_provider_id bigint, p_ad_id bigint, p_action text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_offer",
+      "arguments": "p_provider_id bigint, p_service_id bigint, p_price numeric, p_start_date timestamp with time zone, p_end_date timestamp with time zone, p_currency text, p_product_id bigint, p_active boolean",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_package",
+      "arguments": "p_name text, p_price numeric, p_duration_days integer, p_description text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_payment",
+      "arguments": "p_user_id uuid, p_amount numeric, p_status text, p_package_id bigint, p_place_id bigint, p_discount_code text, p_paymob_transaction_id text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_place",
+      "arguments": "p_name text, p_category_id bigint, p_city text, p_address text, p_phone text, p_website text, p_whatsapp text, p_map_link text, p_description text, p_image_url text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_place",
+      "arguments": "p_name text, p_category text, p_city text, p_address text, p_phone text, p_website text, p_whatsapp text, p_map_url text, p_description text, p_image_url text, p_lat numeric, p_lng numeric, p_type text, p_delivery boolean, p_area text, p_activity_id bigint, p_package_id bigint",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_price_history",
+      "arguments": "p_provider_id bigint, p_service_id bigint, p_product_id bigint, p_price numeric, p_date_recorded timestamp with time zone",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_product",
+      "arguments": "p_name text, p_category text, p_description text, p_image_url text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_provider",
+      "arguments": "p_name text, p_category text, p_city text, p_address text, p_phone text, p_website text, p_whatsapp text, p_map_url text, p_description text, p_image_url text, p_lat numeric, p_lng numeric, p_type text, p_delivery boolean, p_area text, p_user_id uuid, p_activity_id bigint, p_package_id bigint, p_online boolean",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_provider",
+      "arguments": "p_name text, p_category text, p_city text, p_address text, p_phone text, p_website text, p_whatsapp text, p_map_url text, p_description text, p_image_url text, p_lat numeric, p_lng numeric, p_type text, p_delivery boolean, p_area text, p_activity_id bigint, p_package_id bigint",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_record",
+      "arguments": "p_table text, p_data jsonb",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_report",
+      "arguments": "p_user_id uuid, p_provider_id bigint, p_ad_id bigint, p_reason text, p_details text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_review",
+      "arguments": "p_provider_id bigint, p_service_id bigint, p_user_id uuid, p_rating integer, p_comment text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_service",
+      "arguments": "p_provider_id bigint, p_name text, p_price numeric, p_description text, p_image_url text, p_delivery boolean, p_online boolean",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_service_standalone",
+      "arguments": "p_provider_name text, p_service_name text, p_city text, p_category text, p_price numeric, p_description text, p_image_url text, p_delivery boolean, p_online boolean, p_user_id uuid",
+      "return_type": "TABLE(provider_id bigint, service_id bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "add_visit",
+      "arguments": "p_page text, p_ip_address text, p_source text, p_device text, p_country text",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "admin_create_manual_subscription",
+      "arguments": "p_user_id uuid, p_package_id bigint, p_amount numeric",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "admin_delete_package",
+      "arguments": "p_id bigint",
+      "return_type": "void"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "admin_set_provider_status",
+      "arguments": "p_provider_id bigint, p_status text",
+      "return_type": "void"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "admin_set_user_role",
+      "arguments": "p_user_id uuid, p_role text",
+      "return_type": "void"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "admin_upsert_package",
+      "arguments": "p_id bigint, p_name text, p_price numeric, p_duration_days integer, p_is_active boolean, p_description text, p_max_places integer, p_priority_weight integer",
+      "return_type": "bigint"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "can_add_provider",
+      "arguments": "p_user_id uuid",
+      "return_type": "TABLE(allowed boolean, current_count integer, max_places integer, tier text)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "delete_provider",
+      "arguments": "p_id bigint, p_user_id uuid",
+      "return_type": "boolean"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "delete_service",
+      "arguments": "p_id bigint",
+      "return_type": "boolean"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "enforce_provider_quota",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_activities",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, name text, description text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_admin_site_stats",
+      "arguments": "",
+      "return_type": "TABLE(total_providers bigint, pending_providers bigint, active_providers bigint, total_users bigint, total_payments_completed bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_ads",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, provider_id bigint, service_id bigint, title text, description text, start_date timestamp with time zone, end_date timestamp with time zone, created_at timestamp with time zone, status text)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_ads_images",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, ad_id bigint, image_url text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_ads_videos",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, ad_id bigint, video_url text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_affiliates",
+      "arguments": "",
+      "return_type": "TABLE(id uuid, user_id uuid, full_name text, phone text, wallet_phone text, total_earned numeric, commission_rate numeric, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_areas",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, name text, city_id bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_branches",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, provider_id bigint, name text, address text, phone text, lat numeric, lng numeric, map_url text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_categories",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, name text, description text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_cities",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, name text)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_commissions",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, affiliate_id uuid, payment_id bigint, sale_amount numeric, commission_rate numeric, commission_amount numeric, status text, earned_at timestamp with time zone, paid_at timestamp with time zone, discount_code text)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_dashboard_stats",
+      "arguments": "",
+      "return_type": "TABLE(total_visits bigint, today_visits bigint, total_interactions bigint, today_interactions bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_discount_codes",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, code text, discount_value numeric, discount_type text, affiliate_id uuid, expiry_date timestamp with time zone, active boolean, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_favorites",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, user_id uuid, provider_id bigint, ad_id bigint, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_interactions",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, user_id uuid, provider_id bigint, ad_id bigint, action text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_latest_active_payment",
+      "arguments": "p_user_id uuid",
+      "return_type": "TABLE(payment_id bigint, package_id bigint, completed_at timestamp with time zone, expires_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_malls",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, name text, area_id bigint, location_url text)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_offers",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, provider_id bigint, service_id bigint, product_id bigint, price numeric, currency text, start_date timestamp with time zone, end_date timestamp with time zone, active boolean, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_packages",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, name text, price numeric, duration_days integer, ads_limit integer, image_limit integer, video_limit integer, is_active boolean, created_at timestamp with time zone, description text)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_page_visit_stats",
+      "arguments": "p_page text",
+      "return_type": "TABLE(total_visits bigint, today_visits bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_pages_visit_stats",
+      "arguments": "p_pages text[]",
+      "return_type": "TABLE(page text, total_visits bigint, today_visits bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_payments",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, user_id uuid, amount numeric, status text, package_id bigint, place_id bigint, discount_code text, paymob_transaction_id text, created_at timestamp with time zone, completed_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_places",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, name text, category text, city text, address text, phone text, website text, whatsapp text, map_url text, description text, image_url text)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_price_history",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, provider_id bigint, service_id bigint, product_id bigint, price numeric, date_recorded timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_products",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, name text, category text, description text, image_url text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_provider_by_id",
+      "arguments": "p_id bigint",
+      "return_type": "TABLE(id bigint, name text, category text, city text, address text, phone text, website text, whatsapp text, map_url text, description text, image_url text, lat numeric, lng numeric, type text, delivery boolean, area text, user_id uuid, activity_id bigint, status text, created_at timestamp with time zone, updated_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_provider_status_counts",
+      "arguments": "",
+      "return_type": "TABLE(pending_count bigint, active_count bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_providers",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, name text, category text, city text, address text, phone text, website text, image_url text, description text, status text, priority numeric)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_providers_paginated",
+      "arguments": "p_status text, p_limit integer, p_offset integer",
+      "return_type": "TABLE(id bigint, name text, category text, city text, address text, phone text, website text, image_url text, description text, status text, priority numeric)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_providers_per_package",
+      "arguments": "",
+      "return_type": "TABLE(package_name text, providers_count bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_reports",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, user_id uuid, provider_id bigint, ad_id bigint, reason text, details text, status text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_reviews",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, user_id uuid, provider_id bigint, service_id bigint, rating integer, comment text, status text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_service_by_id",
+      "arguments": "p_id bigint",
+      "return_type": "TABLE(id bigint, provider_id bigint, name text, description text, price numeric, image_url text, delivery boolean, online boolean, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_services",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, provider_id bigint, name text, description text, price numeric, online boolean, delivery boolean, image_url text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_site_visit_stats",
+      "arguments": "",
+      "return_type": "TABLE(total_visits bigint, today_visits bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_user_package",
+      "arguments": "p_user_id uuid",
+      "return_type": "TABLE(package_id bigint, package_name text, duration_days integer, started_at timestamp with time zone, expires_at timestamp with time zone, is_active boolean)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_user_place_quota",
+      "arguments": "p_user_id uuid",
+      "return_type": "TABLE(max_places integer, tier text)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_user_profiles",
+      "arguments": "",
+      "return_type": "TABLE(id uuid, full_name text, phone_number text, role text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_users_with_stats",
+      "arguments": "",
+      "return_type": "TABLE(user_id uuid, full_name text, role text, email text, package_name text, started_at timestamp with time zone, expires_at timestamp with time zone, places_count bigint, services_count bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "get_visits",
+      "arguments": "",
+      "return_type": "TABLE(id bigint, page text, ip_address text, source text, device text, country text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "provider_priority",
+      "arguments": "p_provider_id bigint",
+      "return_type": "numeric"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "record_visit",
+      "arguments": "p_page text, p_ip text, p_device text, p_source text, p_country text",
+      "return_type": "TABLE(total_visits bigint, today_visits bigint)"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "update_provider",
+      "arguments": "p_id bigint, p_name text, p_category text, p_city text, p_address text, p_phone text, p_website text, p_whatsapp text, p_map_url text, p_description text, p_image_url text, p_lat numeric, p_lng numeric, p_type text, p_delivery boolean, p_area text, p_user_id uuid",
+      "return_type": "boolean"
+    },
+    {
+      "schema_name": "public",
+      "function_name": "update_service",
+      "arguments": "p_id bigint, p_name text, p_description text, p_price numeric, p_image_url text, p_delivery boolean, p_online boolean",
+      "return_type": "boolean"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "apply_rls",
+      "arguments": "wal jsonb, max_record_bytes integer",
+      "return_type": "SETOF realtime.wal_rls"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "broadcast_changes",
+      "arguments": "topic_name text, event_name text, operation text, table_name text, table_schema text, new record, old record, level text",
+      "return_type": "void"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "build_prepared_statement_sql",
+      "arguments": "prepared_statement_name text, entity regclass, columns realtime.wal_column[]",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "cast",
+      "arguments": "val text, type_ regtype",
+      "return_type": "jsonb"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "check_equality_op",
+      "arguments": "op realtime.equality_op, type_ regtype, val_1 text, val_2 text",
+      "return_type": "boolean"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "is_visible_through_filters",
+      "arguments": "columns realtime.wal_column[], filters realtime.user_defined_filter[]",
+      "return_type": "boolean"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "list_changes",
+      "arguments": "publication name, slot_name name, max_changes integer, max_record_bytes integer",
+      "return_type": "SETOF realtime.wal_rls"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "quote_wal2json",
+      "arguments": "entity regclass",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "send",
+      "arguments": "payload jsonb, event text, topic text, private boolean",
+      "return_type": "void"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "subscription_check_filters",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "to_regrole",
+      "arguments": "role_name text",
+      "return_type": "regrole"
+    },
+    {
+      "schema_name": "realtime",
+      "function_name": "topic",
+      "arguments": "",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "add_prefixes",
+      "arguments": "_bucket_id text, _name text",
+      "return_type": "void"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "can_insert_object",
+      "arguments": "bucketid text, name text, owner uuid, metadata jsonb",
+      "return_type": "void"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "delete_leaf_prefixes",
+      "arguments": "bucket_ids text[], names text[]",
+      "return_type": "void"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "delete_prefix",
+      "arguments": "_bucket_id text, _name text",
+      "return_type": "boolean"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "delete_prefix_hierarchy_trigger",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "enforce_bucket_name_length",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "extension",
+      "arguments": "name text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "filename",
+      "arguments": "name text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "foldername",
+      "arguments": "name text",
+      "return_type": "text[]"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "get_level",
+      "arguments": "name text",
+      "return_type": "integer"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "get_prefix",
+      "arguments": "name text",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "get_prefixes",
+      "arguments": "name text",
+      "return_type": "text[]"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "get_size_by_bucket",
+      "arguments": "",
+      "return_type": "TABLE(size bigint, bucket_id text)"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "list_multipart_uploads_with_delimiter",
+      "arguments": "bucket_id text, prefix_param text, delimiter_param text, max_keys integer, next_key_token text, next_upload_token text",
+      "return_type": "TABLE(key text, id text, created_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "list_objects_with_delimiter",
+      "arguments": "bucket_id text, prefix_param text, delimiter_param text, max_keys integer, start_after text, next_token text",
+      "return_type": "TABLE(name text, id uuid, metadata jsonb, updated_at timestamp with time zone)"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "lock_top_prefixes",
+      "arguments": "bucket_ids text[], names text[]",
+      "return_type": "void"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "objects_delete_cleanup",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "objects_insert_prefix_trigger",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "objects_update_cleanup",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "objects_update_level_trigger",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "objects_update_prefix_trigger",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "operation",
+      "arguments": "",
+      "return_type": "text"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "prefixes_delete_cleanup",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "prefixes_insert_trigger",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "search",
+      "arguments": "prefix text, bucketname text, limits integer, levels integer, offsets integer, search text, sortcolumn text, sortorder text",
+      "return_type": "TABLE(name text, id uuid, updated_at timestamp with time zone, created_at timestamp with time zone, last_accessed_at timestamp with time zone, metadata jsonb)"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "search_legacy_v1",
+      "arguments": "prefix text, bucketname text, limits integer, levels integer, offsets integer, search text, sortcolumn text, sortorder text",
+      "return_type": "TABLE(name text, id uuid, updated_at timestamp with time zone, created_at timestamp with time zone, last_accessed_at timestamp with time zone, metadata jsonb)"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "search_v1_optimised",
+      "arguments": "prefix text, bucketname text, limits integer, levels integer, offsets integer, search text, sortcolumn text, sortorder text",
+      "return_type": "TABLE(name text, id uuid, updated_at timestamp with time zone, created_at timestamp with time zone, last_accessed_at timestamp with time zone, metadata jsonb)"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "search_v2",
+      "arguments": "prefix text, bucket_name text, limits integer, levels integer, start_after text, sort_order text, sort_column text, sort_column_after text",
+      "return_type": "TABLE(key text, name text, id uuid, updated_at timestamp with time zone, created_at timestamp with time zone, last_accessed_at timestamp with time zone, metadata jsonb)"
+    },
+    {
+      "schema_name": "storage",
+      "function_name": "update_updated_at_column",
+      "arguments": "",
+      "return_type": "trigger"
+    },
+    {
+      "schema_name": "vault",
+      "function_name": "_crypto_aead_det_decrypt",
+      "arguments": "message bytea, additional bytea, key_id bigint, context bytea, nonce bytea",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "vault",
+      "function_name": "_crypto_aead_det_encrypt",
+      "arguments": "message bytea, additional bytea, key_id bigint, context bytea, nonce bytea",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "vault",
+      "function_name": "_crypto_aead_det_noncegen",
+      "arguments": "",
+      "return_type": "bytea"
+    },
+    {
+      "schema_name": "vault",
+      "function_name": "create_secret",
+      "arguments": "new_secret text, new_name text, new_description text, new_key_id uuid",
+      "return_type": "uuid"
+    },
+    {
+      "schema_name": "vault",
+      "function_name": "update_secret",
+      "arguments": "secret_id uuid, new_secret text, new_name text, new_description text, new_key_id uuid",
+      "return_type": "void"
+    }
+  ]

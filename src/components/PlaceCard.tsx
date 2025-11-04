@@ -4,7 +4,7 @@ import type { Provider } from '../types'
 
 // src/components/PlaceCard.tsx
 
-export default function PlaceCard({ provider }: { provider: Provider }) {
+export default function PlaceCard({ provider, stats }: { provider: Provider; stats?: { total_visits?: number; today_visits?: number } }) {
   const placeholder = 'https://placehold.co/600x400?text=No+Image'
   const [imgSrc, setImgSrc] = useState<string>(provider.image_url || placeholder)
 
@@ -23,43 +23,53 @@ export default function PlaceCard({ provider }: { provider: Provider }) {
     setImgSrc(placeholder)
   }
 
+  const handleImageLinkClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    if (provider.image_url) {
+      window.open(provider.image_url, '_blank', 'noopener,noreferrer')
+    }
+  }
+
   return (
-    <Link to={`/place/${provider.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-      <div style={styles.card}>
-        <img
-          src={imgSrc}
-          alt={provider.name}
-          style={styles.image}
-          referrerPolicy="no-referrer"
-          decoding="async"
-          onError={handleImgError}
-        />
-        {provider.image_url && (
-          <a
-            href={provider.image_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={styles.imageLink}
-            onClick={(e) => e.stopPropagation()}
-          >عرض الصورة</a>
-        )}
-        <h3>{provider.name}</h3>
-        <p>{provider.category}</p>
-        <p style={styles.city}>{provider.city}</p>
-        {provider.description && <small>{provider.description}</small>}
-      </div>
-    </Link>
+    <div style={styles.cardContainer}>
+      <Link to={`/place/${provider.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div className="card">
+          <img
+            src={imgSrc}
+            alt={provider.name}
+            style={styles.image}
+            referrerPolicy="no-referrer"
+            decoding="async"
+            onError={handleImgError}
+          />
+          <h3>{provider.name}</h3>
+          <p>{provider.category}</p>
+          <p style={styles.city}>{provider.city}</p>
+          {provider.description && <small>{provider.description}</small>}
+          {(
+            <div className="badge muted" style={{ marginTop: '0.5rem' }}>
+              <span>زيارات اليوم: {stats?.today_visits ?? 0}</span>
+              <span> — إجمالي: {stats?.total_visits ?? 0}</span>
+            </div>
+          )}
+        </div>
+      </Link>
+      {provider.image_url && (
+        <button
+          onClick={handleImageLinkClick}
+          className="btn ghost"
+        >
+          عرض الصورة
+        </button>
+      )}
+    </div>
   )
 }
 
 const styles = {
-  card: {
-    background: '#fff',
-    borderRadius: '8px',
-    boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-    padding: '1rem',
-    textAlign: 'center' as const,
-    transition: '0.2s',
+  cardContainer: {
+    position: 'relative' as const,
   },
   image: {
     width: '100%',
@@ -70,12 +80,5 @@ const styles = {
     backgroundColor: '#f3f4f6',
   },
   city: { color: '#666', fontSize: '0.9rem' },
-  imageLink: {
-    display: 'inline-block',
-    marginTop: '0.25rem',
-    color: '#007bff',
-    textDecoration: 'none',
-    fontSize: '0.85rem',
-    fontWeight: 'bold' as const,
-  },
+  imageButton: {},
 }
