@@ -3,11 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Redirecting…</title>
-    <meta http-equiv="refresh" content="0; url=./">
     <script>
-      // GitHub Pages SPA fallback: redirect any 404 back to the app root
-      var base = location.pathname.replace(/[^/]+$/, '');
-      location.replace(base);
+      // GitHub Pages SPA fallback: redirect any 404 to "/<repo>/"
+      (function() {
+        var parts = location.pathname.split('/').filter(Boolean);
+        // For project pages: /<repo>/... → redirect to "/<repo>/"
+        var repoBase = parts.length > 0 ? '/' + parts[0] + '/' : '/';
+        location.replace(repoBase);
+      })();
     </script>
   </head>
   <body>
