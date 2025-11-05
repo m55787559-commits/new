@@ -7,9 +7,9 @@
       // GitHub Pages SPA fallback: redirect any 404 to "/<repo>/"
       (function() {
         var parts = location.pathname.split('/').filter(Boolean);
-        // For project pages: /<repo>/... → redirect to "/<repo>/"
+        // Project pages: /<repo>/... → redirect to "/<repo>/" but PRESERVE the hash (OAuth tokens)
         var repoBase = parts.length > 0 ? '/' + parts[0] + '/' : '/';
-        location.replace(repoBase);
+        location.replace(repoBase + location.hash);
       })();
     </script>
   </head>
